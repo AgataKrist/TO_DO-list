@@ -1,0 +1,129 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0; /* нулевая граница */
+  padding: 0; /* нулевые отступы */
+  border: 0; /* больше всего для картинок в IE6 */
+  outline: 0; /* точечная граница вокруг ссылок в Firefox */
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: "Nunito", sans-serif;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none; /* маркеры без кружочков */
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+:focus {
+  outline: 0; /* Firefox выделяет рамкой из точек все ссылки при нажатии */
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse; /* cellspacing="0" */
+  border-spacing: 0;
+}
+
+// ========================================================
+// Container and Main
+
+body {
+  background: #1f1c2c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #928dab,
+    #1f1c2c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #928dab,
+    #1f1c2c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.content {
+  min-height: calc(100vh - 80px);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}

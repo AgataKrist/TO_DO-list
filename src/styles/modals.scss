@@ -1,0 +1,76 @@
+.hystmodal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+
+  align-items: center;
+  z-index: 10;
+  padding: 30px 0;
+  background: rgba(0, 0, 0, 0.8);
+  &__window {
+    position: relative;
+    min-width: 300px;
+    padding: 30px 20px;
+    background: #fff;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .btns__group-top {
+      margin-bottom: 10px;
+      .reset {
+      }
+      .start {
+      }
+    }
+    h2 {
+      margin-bottom: 10px;
+      border: 1px solid;
+      font-size: 30px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      max-height: 200px;
+      resize: none;
+      margin-bottom: 10px;
+    }
+  }
+  .btns__group-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .save {
+    }
+    .close {
+    }
+  }
+  .close__modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .input__modal {
+    margin-bottom: 10px;
+    width: 70%;
+    padding: 5px;
+  }
+
+  &__hidden {
+    position: relative;
+    display: none;
+  }
+
+  &-open {
+    display: block;
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   <title>Document</title>
+</head>
+
+<body>
+   <header class="header">
+      <div class="container">
+         <div class="header__content">
+            <a class="logo" href="#">
+               <img src="images/logo.png" alt="logo">
+            </a>
+         </div>
+      </div>
+   </header>
+
+   <div class="preloader">
+      <div class="preloader__row">
+         <div class="preloader__item"></div>
+         <div class="preloader__item"></div>
+      </div>
+   </div>
+
+   <main>
+      <div class="container">
+         <div class="content hide">
+            <div class="add__task">
+               <div>
+                  <input type="text" placeholder="Введите задание">
+                  <button class="add__btn">Добавить</button>
+               </div>
+               <div class='itemsList delete__forewer'>
+                  <i class="fas fa-trash-alt "></i>
+               </div>
+            </div>
+
+            <div class="todos__container">
+
+               <div class="processBlock" data-block=' 0'>
+                  <h3>TODO <span>TOTAL:</span><span class="counter counter__notCompleted"></h3>
+                  <ul class="itemsList notCompleted">
+                     <!-- <li class="item">
+                        <div class="li__row">
+                           <div class="count"><span>1</span></div>
+                           <div class="text">Go shop Go shop</div>
+                           <div class="btn__group">
+                              <i class="fas fa-play"></i>
+                              <i class="fas fa-undo"></i>
+                              <i class="fas fa-check"></i>
+                              <i class="fas fa-trash"></i>
+                           </div>
+                        </div>
+                        <div class="li__row">
+                           <div class="user">Evgeni Belonogov</div>
+                           <div class="date">10.07.2021</div>
+                        </div>
+                     </li> -->
+
+                  </ul>
+               </div>
+               <div class="processBlock" data-block='0'>
+                  <h3>In progress <span>TOTAL:</span><span class="counter counter__inDone"></span></h3>
+                  <ul class="itemsList inDone">
+
+                  </ul>
+               </div>
+               <div class="processBlock " data-block='0'>
+                  <h3>Done <span>TOTAL:</span> <span class="counter counter__completed"></span></h3>
+                  <ul class="itemsList completed">
+
+                  </ul>
+               </div>
+
+               <div class="processBlock " data-block='0'>
+                  <h3>Deleted<span>TOTAL:</span><span class="counter counter__deleted"></span></h3>
+                  <ul class="itemsList deleted">
+
+                  </ul>
+               </div>
+
+            </div>
+
+         </div>
+      </div>
+   </main>
+
+   <div class="login-form">
+      <h3>Romello Login</h3>
+      <input type="email" placeholder="Email..." class="emailinput">
+      <span class="emailinput-error"></span>
+      <input type="password" placeholder="Password..." class="passwordinput">
+      <span class="passwordinput-error"></span>
+      <div class="btns">
+         <button class="login-button">Войти</button>
+         <button class="register-button">Регистрация</button>
+      </div>
+   </div>
+
+   <div class="logged hide">
+      <p class="hello">Добро пожаловать в систему Romello</p>
+      <button class="logout-button">Выйти</button>
+   </div>
+
+   <!-- Hystymodal windows -->
+
+
+   <!-- Подтверждение на перемещение в корзину -->
+   <div class="hystmodal hystmodal__hidden delete">
+      <div class="hystmodal__window">
+         <a href="#" class="close__modal">
+         </a>
+         <h2 class="element__name">Поместить в удаленные?</h2>
+         <div class="btns__group-bottom">
+            <input type="button" class="btn__modal save" value="Да"></input>
+            <input type="button" class="btn__modal close" value="Нет"></input>
+         </div>
+      </div>
+   </div>
+   <!-- Подтверждение на перемещение в корзину -->
+   <div class="hystmodal hystmodal__hidden deleteForewer">
+      <div class="hystmodal__window">
+         <a href="#" class="close__modal">
+         </a>
+         <h2 class="element__name">Удалить навсегда?</h2>
+         <div class="btns__group-bottom">
+            <input type="button" class="btn__modal save" value="Да"></input>
+            <input type="button" class="btn__modal close" value="Нет"></input>
+         </div>
+      </div>
+   </div>
+
+   <!-- Модальное окно для добавления задачи -->
+   <div class="hystmodal hystmodal__hidden hystmodal__comment">
+      <div class="hystmodal__window">
+         <input class="input__modal add" type="text" id="input-add" placeholder="Поменять название">
+         <textarea name="comments" id="comments" placeholder="введите комментарии к задаче"></textarea>
+         <div class="btns__group-bottom">
+            <button class="btn__modal create">Сохранить изменения</button>
+            <button class="btn__modal close">Отмена</button>
+         </div>
+      </div>
+   </div>
+
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+   <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+   <!-- moment js для времени -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+   <script src="./index.js"></script>
+</body>
+
+</html>
